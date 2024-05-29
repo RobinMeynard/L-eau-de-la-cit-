@@ -1,0 +1,633 @@
+
+                /*Header layout*/
+               
+.logo-site {
+    margin-top: 5px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("../images/liceCalqueBanniere.jpg");
+    background-attachment: fixed;
+    background-color: white;
+}
+
+.menu-gauche {
+    width: 27%;
+    display: flex;
+    background-color: rgba(250, 247, 220, 0.65);
+    justify-content: space-around;
+    height: var(--hauteur-menu);
+}
+
+.menu-droit {
+    width: 27%;
+    display: flex;
+    justify-content: space-around;
+    height: var(--hauteur-menu);
+    background-color: rgba(250, 247, 220, 0.65);
+}
+
+.chercher {
+    margin-top: 4%;
+    margin-right: 2em;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+button {
+    background-color: rgba(250, 247, 220, 0);
+    border: 1px solid rgba(250, 247, 220, 0);
+    color: rgba(250, 247, 220, 0);
+}
+
+.loupe {
+    position: relative;
+    top: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+            /*Scrolling menu*/
+
+:root {
+    --hauteur-menu: 100px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    z-index: 1;
+    width: 10em;
+    font-size: 16px;
+    position: sticky;
+}
+
+nav > ul {
+    display: flex;
+    text-align: center;
+    height: var(--hauteur-menu);
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav > ul > li {
+    position: absolute;
+    height: 100%;
+}
+
+nav > ul > li > span {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+li a {
+    text-decoration: none;
+    color:black;
+}
+
+.sous-menu {
+    margin-top: var(--hauteur-menu);
+    width: 10em;
+    text-align: left;
+    background-color: rgb(250, 247, 220);
+    overflow: hidden;
+    max-height: 0;
+}
+
+.sous-menu-produits {
+    width: 10em;
+    text-align: left;
+    background-color: rgb(250, 247, 220);
+    overflow: hidden;
+    max-height: 0;
+    position:absolute;
+    top: 100%;
+    left: 100%;
+}
+
+.sous-menu > li > a {
+    height: 50px;
+    padding-left: 20px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.sous-menu-produits > li > a {
+    height: 50px;
+    padding-left: 20px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+nav > ul > li:hover {
+    background-color: rgba(141, 134, 72, 0.3);
+}
+
+nav > ul > li:hover > span {
+    color: white;
+}
+
+.sous-menu > li:hover {
+    background-color: rgba(141, 134, 72, 0.3);
+}
+
+.sous-menu-produits > li:hover {
+    background-color: rgba(141, 134, 72, 0.3);
+}
+
+.sous-menu > li:hover > a {
+    color: white;
+}
+
+.sous-menu-produits > li:hover > a {
+    color: white;
+}
+
+@keyframes apparitionSousMenu {
+    0%{
+        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0);
+    }
+    30%{
+        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+    }
+    100%{
+        max-height: 50em;
+        box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.3);
+    }
+}
+
+.menu-deroulant:hover > .sous-menu {
+    animation: apparitionSousMenu 1s forwards;
+}
+
+.menu-deroulant:hover > .sous-menu-produits {
+    animation: apparitionSousMenu 1s forwards;
+}
+
+            /*Customer interface*/
+
+.section-client {
+    margin-top: 3%;
+}
+
+.logo-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-logo-compte {
+    position: relative;
+    top: 12px;   
+}
+
+.panier {
+    margin-right: 2em;
+    margin-top: 3%;
+}
+
+.img-logo-panier {
+    position: relative;
+    top: 12px;   
+}
+
+
+            /*First section layout*/
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.transbox {
+    margin: 5%;
+    margin-left: 25%;
+    padding: 6%;
+    height: 80%;
+    width: 20%;
+    font-size: 18px;
+    line-height: 1.75em;
+    text-align: center;
+    background-color: rgba(250, 247, 220, 0.65);
+    box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3);
+}
+
+.caroussel-produits {
+    display: flex;
+    animation-duration: 20s;
+    animation-name: mesProduits;
+    animation-iteration-count: infinite;
+}
+
+.presentation-produits {
+    width: 25%;
+    overflow: hidden;
+    margin-right: 15%;
+}
+
+@keyframes mesProduits {
+    0% {
+        transform: translateX(0);
+    }
+    12.5% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-281px);
+    }
+    37.5% {
+        transform: translateX(-281px);
+    }
+    50%{
+        transform: translateX(-562px);
+    }
+    62.5% {
+        transform: translateX(-562px);
+    }
+    75% {
+        transform: translateX(-843px);
+    }
+    87.5% {
+        transform: translateX(-843px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+            /*footer layout*/
+
+footer {
+    width: 100%;
+    height: 8em;
+    background: linear-gradient( #5c5c5c,#222222);
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+
+.social-networks {
+    margin: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.x {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+            /*Catalog and productSheet layout*/
+
+h3 {
+    text-indent: 10%;
+    background-color: rgba(250, 247, 220, 0.65);
+    font-size: 18px;
+}
+
+.Parfums , .Laits , .Crèmes , .Huiles , .Bougies , .Baumes , .Élixirs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.imgcat {
+    padding: 1em;
+}
+
+.catalogue {
+    margin-top: 2em;
+}
+
+.fiche-produit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    margin-bottom: 5%;
+}
+
+.description-fiche {
+    background-color: rgba(250, 247, 220, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fiche-img {
+    margin-left: 5em;
+}
+
+.titre-fiche {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+            /*sign-up/login & admin section form*/
+
+.inscription , .connexion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.sign-up {
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 2px;
+}
+
+.login {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+fieldset {
+    line-height: 2em;
+    background-color: rgba(250, 247, 220, 0.65);
+    border-color: rgba(250, 247, 220, 0.65);
+    border-style: none;
+    padding: 2em;
+}
+
+.log > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;
+}
+
+legend {
+    font-size: 20px;
+    position: relative;
+    bottom: 15px;
+}
+
+.adresse , .complement-adresse {
+    width: 350px;
+}
+
+.mail {
+    width: 250px;
+}
+
+.submit-sign-up {
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 2%;
+    margin-left: 80%;
+    background-color: gold;
+    border: 1px solid rgba(250, 247, 220, 0);
+}
+
+.submit-sign-up:hover {
+    background-color: goldenrod;
+}
+
+.submit-log-in {
+    width: 100px;
+    height: 30px;
+    margin-top: 2em;
+    background-color: gold;
+    border: 1px solid rgba(250, 247, 220, 0);
+    position: relative;
+    left: 60%;
+}
+
+.submit-log-in:hover {
+    background-color: goldenrod;
+}
+
+.lien-inscription {
+    text-decoration: underline;
+    color: blue;
+}
+
+.description {
+    width: 300px;
+}
+
+.desc > label {
+    position: relative;
+    bottom: 60px;
+}
+
+.qte {
+    width: 35px;
+}
+
+.bottom-create {
+    display: flex;
+    justify-content: space-between
+}
+
+.titre-session {
+    margin-top: 2em;
+    padding-bottom: 1em;
+}
+
+.modifs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5em;
+    background-color: rgba(250, 247, 220, 0.65);
+    width: 35%;
+    margin-bottom: 5em;
+}
+
+.modifs > div > form > fieldset > div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 15%;
+}
+
+.modifs > div > form > fieldset {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 1.5em;
+    background-color: rgba(241, 237, 203, 0.65);
+}
+
+.submit-session {
+    position: relative;
+    right: 84%;
+}
+
+            /*media query*/
+
+@media screen and (max-width: 1800px) {
+    .presentation-produits {
+        width:30%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .presentation-produits {
+        width:40%;
+        margin-right: 10%;
+    }
+
+    .input-search {
+        width: 7em;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .presentation-produits {
+        width:50%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .section {
+        display: flex;
+        justify-content: space-around;
+    }
+    .transbox {
+        width: 33%;
+        font-size: 12px;
+    }
+    .menu-droit {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        padding: 2px;
+    }
+    .menu-gauche {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .presentation-produits {
+        width: 50%;
+        margin-right: 10%;
+    }
+    .chercher {
+        margin-bottom: 10px;
+        margin-left: 10%;
+    }
+
+    .section-client {
+        margin-bottom: 5%;
+        margin-left: 15%;
+    }
+
+    .panier {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 15%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .presentation-produits {
+        width:80%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .presentation-produits {
+        width:90%;
+        margin-right: 5%;
+    }
+    .loupe {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .presentation-produits {
+        visibility: hidden;
+    }
+
+    .transbox {
+        margin-left: 58%;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    html {
+        height: 100%;
+      }
+
+    body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+
+    footer {
+        position: absolute; bottom: 0;
+    }
+
+    .elixirs {
+        padding-bottom: 15%;
+    }
+}
+
+@media screen and (max-width: 1840px) {
+    .modifs {
+        width: 40%
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .modifs {
+        width: 50%
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .modifs {
+        width: 60%
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .change {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
